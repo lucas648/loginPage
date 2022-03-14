@@ -14,13 +14,13 @@ export default function Routes(){
         <Stack.Screen 
           name="Welcome"
           component={Welcome}
-          options={{}}
+          options={{ headerShown: false }}
         />
 
         <Stack.Screen 
           name="SignIn"
           component={SignIn}
-          options={{}}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
