@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
@@ -5,6 +6,13 @@ import * as Animatable from 'react-native-animatable';
 
 
 export default function  SignIn() {
+
+  const navigation = useNavigation();
+
+  const goTo = (destino: string)=>{
+    navigation.navigate(destino)
+  }
+
   return (
     <View style={styles.container}>
       <Animatable.View 
@@ -25,10 +33,16 @@ export default function  SignIn() {
           placeholder="Digite sua senha"
           style={styles.input}
         />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+          style={styles.button}
+          onChange={()=>{goTo('Cadastro')}}
+        >
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonRegister}>
+        <TouchableOpacity 
+          style={styles.buttonRegister} 
+          onChange={()=>{goTo('Cadastro')}}
+        >
           <Text style={styles.registerText}>Faça seu Cadastro</Text>
         </TouchableOpacity>
       </Animatable.View>
