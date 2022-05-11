@@ -35,13 +35,13 @@ export default function  SignIn() {
         />
         <TouchableOpacity 
           style={styles.button}
-          onChange={()=>{goTo('Cadastro')}}
+          onPress={()=>{goTo('Cadastro')}}
         >
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
         <TouchableOpacity 
           style={styles.buttonRegister} 
-          onChange={()=>{goTo('Cadastro')}}
+          onPress={()=>{goTo('Cadastro')}}
         >
           <Text style={styles.registerText}>Faça seu Cadastro</Text>
         </TouchableOpacity>

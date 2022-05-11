@@ -1,8 +1,12 @@
 import React from 'react';
-import { View, Text ,TextInput, Image } from 'react-native'
+import { View, Text ,TextInput, TouchableOpacity } from 'react-native'
 import HomeItem from '../../components/HomeItem';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home(){
+
+  const navigation = useNavigation();
+
   const casasCompra = [
     '../assets/home/casa1-compra.jpg',
     '../assets/home/casa2-compra.jpg',
@@ -24,14 +28,18 @@ export default function Home(){
         <TextInput 
           placeholder='Digite o que busca ...'
         />
-        <HomeItem 
-          title='Alugar' 
-          images={casasCompra}
-        />
-        <HomeItem 
-          title='comprar' 
-          images={casasAluguel}
-        />
+        <TouchableOpacity onPress={()=>{navigation.navigate('Aluguel')}}>
+          <HomeItem 
+            title='Alugar' 
+            images={casasCompra}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigation.navigate('Compra')}}>
+          <HomeItem 
+            title='comprar' 
+            images={casasAluguel}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
